@@ -1,0 +1,6 @@
+- Entire into command line to install node: npm init and go through creation steps in cli and see package.json created
+- Entire into command line to install express: npm install express (node_modules folder should show up now)
+- Create src folder and inside a client and server folder 
+- In server folder, create file name server.js and start up a server (see weather app for example)
+- open terminal in VSCode and navigate to the server folder. Type "node server.js" to check of server is running
+- 
