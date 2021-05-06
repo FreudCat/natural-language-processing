@@ -25,4 +25,16 @@ module.exports = {
 - go to server.js in server folder and type app.use(express.static("dist")); to provide an entry point 
 - go to index.html in views and add the path to the main.js file in the dist folder like you would for any js file (won't need any other ref files since everything will be in the dist folder - we will also get rid this main.js connection in a little bit )
 - install babel in command line npm i -D @babel/core @babel/preset-env babel-loader (See if there's a later verions) 
-- create a file called .babelrc in the root of the project and type { ‘presets’: ['@babel/preset-env'] }
+- create a file called .babelrc in the root of the project and type { ‘presets’: ['@babel/preset-env'] }   ---> we need babel to import js into other js files on the client side
+- now connect webpack to babel, go to webpack.config.js and add 
+       module: {
+            rules: [
+                    {
+                test: '/\.js$/',
+                exclude: /node_modules/,
+                loader: "babel-loader"
+                    }
+            ]
+    }   underneath "entry" 
+
+- each time you add something, delete the dist folder and use npm run build to recreate the new dist folder with your new assets, etc 
