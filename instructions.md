@@ -11,6 +11,7 @@
   },
 - use npm run dev to start the nodemon server
 - Add js, styles, and views folders and create index.html in views folder 
+- create index.js in the client folder
 - install webpack via command line: npm i webpack webpack-cli 
 - in package json add "build": "webpack" to scripts
 - add "webpack-dev-server": "^3.11.0" to devdependencies in package.json
@@ -19,3 +20,9 @@
 const webpack = require("webpack")
 module.exports = {
 } to the webpack.config.js folder
+- add entry: './src/client/index.js' within the module.exports in the webpack.config.js
+- type npm run build and see that a dist folder has been created 
+- go to server.js in server folder and type app.use(express.static("dist")); to provide an entry point 
+- go to index.html in views and add the path to the main.js file in the dist folder like you would for any js file (won't need any other ref files since everything will be in the dist folder - we will also get rid this main.js connection in a little bit )
+- install babel in command line npm i -D @babel/core @babel/preset-env babel-loader (See if there's a later verions) 
+- create a file called .babelrc in the root of the project and type { ‘presets’: ['@babel/preset-env'] }
