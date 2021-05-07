@@ -38,3 +38,17 @@ module.exports = {
     }   underneath "entry" 
 
 - each time you add something, delete the dist folder and use npm run build to recreate the new dist folder with your new assets, etc 
+- install html webpack plugin: npm i -D html-webpack-plugin
+- require plugin at top of webpack config: const htmlWebpackPlugin = require("html-webpack-plugin")
+- add 
+plugins: [
+      new htmlWebpackPlugin({
+        template: "./src/client/views/index.html",
+        filename: "./index.html"
+      })
+  ]   after the entire modules curly braces
+- delete the script in the views -> index.html 
+- delete dist folder and type npm run build, check that dist folder now has main.js and index.html and that index.html has the script tab w/ the main.js
+- start the server and go to browser (localhost:portnumber) to make sure the html displayed
+- go to server -> index.js and add: app.get("/", function (req, res) { res.sendFile("dist/index.html")})
+- 
