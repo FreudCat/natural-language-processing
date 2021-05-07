@@ -51,4 +51,12 @@ plugins: [
 - delete dist folder and type npm run build, check that dist folder now has main.js and index.html and that index.html has the script tab w/ the main.js
 - start the server and go to browser (localhost:portnumber) to make sure the html displayed
 - go to server -> index.js and add: app.get("/", function (req, res) { res.sendFile("dist/index.html")})
-- 
+- add mode: "production", to webpack.config in the modules.export
+- change webpack.conf file to webpack.prod.js (the one with the mode:production)
+- add webpack.dev.js in the root folder 
+- go to package.json and remove the build: line, instead add "build-prod": "webpack --config webpack.prod.js", "build-dev": "webpack --config webpack.dev.js"
+- add the following to webpack.dev.js module.exports = {
+  mode: "development", 
+  devtool: "source-map"
+}
+- from now on use npm run build-dev to create the dist folder
