@@ -131,7 +131,6 @@ _To clean up build folders upon rebuild_
 
 ### To get the project running 
 - npm start 
-- delete dist folder, if present
 - npm run build-prod
 - npm run build-dev 
 - node-sass -o css src/client/styles -w

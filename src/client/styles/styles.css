@@ -42,6 +42,36 @@ body {
     grid-area: img;
     border: 1px red solid;
   }
+  #img-reading {
+    width: 60%;
+    position: relative;
+    top: 5vh;
+    left: 2vw;
+    z-index: 1;
+  }
+  #img-lotus {
+    width: 40%;
+    position: relative;
+    top: -15vh;
+    left: 25vw;
+    z-index: 3;
+  }
+  #img-newspaper {
+    width: 90%;
+    position: relative;
+    top: -20vh;
+    left: 15vw;
+    z-index: 2;
+  }
+  #gold-frame {
+    position: relative;
+    border: 3px solid gold;
+    height: 40vh;
+    width: 30vw;
+    top: -70vh;
+    left: 7vw;
+    z-index: 0;
+  }
   #form {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
