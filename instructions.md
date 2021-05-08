@@ -63,3 +63,42 @@ plugins: [
 - add "start": "node src/server/server.js", to package.json so that you can run npm start to start the server in terminal
 - run npm i -D webpack-dev-server to install dev server that will hot reload
 - now replace the build-dev in package.json with:"webpack serve  --config webpack.dev.js --open"
+- to run, type in terminal: npm start, then start another terminal and type npm run build-prod (be sure to delete the dist folder first), then type run npm build-dev
+
+
+## Sass 
+- npm install -g node-sass 
+- type node-sass -o css src/client/styles -w  (-o output to css, the folder containing the scss files, and -w means to continuously watch for changes); now the cmd line is watching for changes
+- to use sass with webpack: npm install sass-loader sass webpack --save-dev
+- add this to .build-dev and build-prod 
+module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
+      },
+    ],
+  },
+
+# Style loader to connect CSS via webpack 
+- npm install --save-dev style-loader
+- npm install --save-dev css-loader
+- add to both prod and dev module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
+};
+- in src->index.js add require("./styles/styles.css"); (css path)
+
