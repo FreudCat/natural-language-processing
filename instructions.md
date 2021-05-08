@@ -102,9 +102,37 @@ module: {
 };
 - in src->index.js add require("./styles/styles.css"); (css path)
 
+## Clean Webpack 
+_To clean up build folders upon rebuild_
+- in config files, under entry, type: output: {
+    clean: true
+  },
+- will no longer need clean webpack plugin if we have that
+
+## Bundle images to webpack 
+- make sure html-webpack-plugin is npm installed 
+- type npm i -D html-loader 
+- in dev.js add: 
+    {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
+- type npm i -D file-loader
+- Add to dev.js and prod.js: 
+        {
+          test: /\.(png|jpe?g|gif)$/i,
+          use: [
+            {
+              loader: "file-loader",
+            },
+          ],
+        },
+- now you can use ```img src=``` in html
+
 ### To get the project running 
 - npm start 
 - delete dist folder, if present
 - npm run build-prod
 - npm run build-dev 
 - node-sass -o css src/client/styles -w
+
