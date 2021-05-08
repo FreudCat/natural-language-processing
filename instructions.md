@@ -129,6 +129,18 @@ _To clean up build folders upon rebuild_
         },
 - now you can use ```img src=``` in html
 
+## Installing Jest 
+- npm i -D jest 
+- add "test":"jest" into package.json under "scripts"
+- create folder in root called __tests__ (double underscore on either side)
+- create a file with the function or file name followed by .spec.js (ex - handleSubmit.spec.js)
+- in spec.js, create test by writing: 
+describe("name of fxn", () => {}); 
+- within the {} above, type: 
+test("what the fxn does", () => {//actual test}) 
+
+
+
 ### To get the project running 
 - npm start 
 - npm run build-prod

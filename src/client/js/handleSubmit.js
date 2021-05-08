@@ -7,12 +7,12 @@ export const handleSubmit = (e) => {   //notice the "export" in front of functio
   const inputErr = document.getElementById("err-holder"); 
 
   console.log(`${name} ${userURL}`);
+  inputErr.innerHTML = "";
 
   if ((name) && (userURL)) {
-
+    return true;
   } else {
-    
+    inputErr.innerHTML = "Please input a name and url";
   }
-
 }
 
