@@ -50,13 +50,14 @@ plugins: [
 - delete the script in the views -> index.html 
 - delete dist folder and type npm run build, check that dist folder now has main.js and index.html and that index.html has the script tab w/ the main.js
 - start the server and go to browser (localhost:portnumber) to make sure the html displayed
-- go to server -> index.js and add: app.get("/", function (req, res) { res.sendFile("dist/index.html")})
+- go to server -> index.js and add: app.get("/", function (req, res) {
+  res.sendFile(path.resolve('src/client/views/index.html'))
+}); and then add const path = require('path') to the top
 - add mode: "production", to webpack.config in the modules.export
 - change webpack.conf file to webpack.prod.js (the one with the mode:production)
-- add webpack.dev.js in the root folder 
-- go to package.json and remove the build: line, instead add "build-prod": "webpack --config webpack.prod.js", "build-dev": "webpack --config webpack.dev.js"
-- add the following to webpack.dev.js module.exports = {
-  mode: "development", 
-  devtool: "source-map"
-}
-- from now on use npm run build-dev to create the dist folder
+- add webpack.dev.js in the root folder and copy everything from the .prod.js folder into this file
+- add the following to the module.exports in dev.js: mode: "development", 
+  devtool: "source-map" and delete mode: production
+- go to package.json and remove the build: line, instead add "build-prod": "webpack --config webpack.prod.js", "build-dev": "webpack serve  --config webpack.dev.js --open"
+- from now on use npm run build-prod to create the dist folder
+- add "start": "node src/server/server.js", to package.json so that you can run npm start to start the server in terminal
