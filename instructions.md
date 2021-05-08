@@ -61,3 +61,5 @@ plugins: [
 - go to package.json and remove the build: line, instead add "build-prod": "webpack --config webpack.prod.js", "build-dev": "webpack serve  --config webpack.dev.js --open"
 - from now on use npm run build-prod to create the dist folder
 - add "start": "node src/server/server.js", to package.json so that you can run npm start to start the server in terminal
+- run npm i -D webpack-dev-server to install dev server that will hot reload
+- now replace the build-dev in package.json with:"webpack serve  --config webpack.dev.js --open"
