@@ -10,8 +10,8 @@ body {
     display: grid;
     width: 90vw;
     height: 75vh;
-    -ms-grid-columns: 50vw;
-        grid-template-columns: 50vw;
+    -ms-grid-columns: 90%;
+        grid-template-columns: 90%;
     -ms-grid-rows: 75vh;
         grid-template-rows: 75vh;
         grid-template-areas: "form-holder";
@@ -20,6 +20,33 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     margin: auto;
+  }
+  #main-holder {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: form-holder;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (45vw)[2];
+        grid-template-columns: repeat(2, 45vw);
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "img form";
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #img-result-holder {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: img;
+    border: 1px red solid;
+  }
+  #form {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: form;
+    border: 1px solid blue;
   }
   #name {
     border-radius: 10px;
@@ -33,6 +60,7 @@ body {
   }
   #check-btn {
     border-radius: 10px;
+    border: none;
   }
 }
 /*# sourceMappingURL=styles.css.map */

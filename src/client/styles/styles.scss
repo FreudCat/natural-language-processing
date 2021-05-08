@@ -12,12 +12,31 @@ body {
     display: grid; 
     width: 90vw; 
     height: 75vh;
-    grid-template-columns: 50vw;
+    grid-template-columns: 90%;
     grid-template-rows: 75vh;
     grid-template-areas: "form-holder";
     background: #fff;
     justify-content: center;
     margin: auto;
+  }
+
+  #main-holder {
+    grid-area: form-holder;
+    display: grid;
+    grid-template-columns: repeat(2, 45vw); 
+    grid-template-rows: auto;
+    grid-template-areas: "img form"; 
+    justify-content: center;
+  }
+
+  #img-result-holder {
+    grid-area: img;
+    border: 1px red solid;
+  }
+
+  #form {
+    grid-area: form;
+    border: 1px solid blue;
   }
 
   #name {
@@ -33,7 +52,8 @@ body {
   }
 
   #check-btn {
-    border-radius: $input-radius; 
+    border-radius: $input-radius;
+    border: $input-brdr;
   }
 }
 
