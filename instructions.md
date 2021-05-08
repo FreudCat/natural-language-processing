@@ -102,3 +102,9 @@ module: {
 };
 - in src->index.js add require("./styles/styles.css"); (css path)
 
+### To get the project running 
+- npm start 
+- delete dist folder, if present
+- npm run build-prod
+- npm run build-dev 
+- node-sass -o css src/client/styles -w

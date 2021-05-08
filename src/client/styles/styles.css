@@ -1,5 +1,38 @@
-p {
-  color: red;
-  border: 10px solid red;
+body {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(#00002c));
+  background-image: linear-gradient(black, #00002c);
+  height: 100vh;
+}
+
+@media only screen and (max-width: 450px) {
+  #container {
+    display: -ms-grid;
+    display: grid;
+    width: 90vw;
+    height: 75vh;
+    -ms-grid-columns: 50vw;
+        grid-template-columns: 50vw;
+    -ms-grid-rows: 75vh;
+        grid-template-rows: 75vh;
+        grid-template-areas: "form-holder";
+    background: #fff;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: auto;
+  }
+  #name {
+    border-radius: 10px;
+    border: none;
+    background: lightgrey;
+  }
+  #url {
+    border-radius: 10px;
+    border: none;
+    background: lightgrey;
+  }
+  #check-btn {
+    border-radius: 10px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

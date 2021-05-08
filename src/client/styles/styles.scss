@@ -1,4 +1,39 @@
-p {
-  color: red; 
-  border: 10px solid red; 
+$input-bckgrnd: lightgrey;
+$input-radius: 10px; 
+$input-brdr: none; 
+
+body {
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 44)); 
+  height: 100vh; 
 }
+
+@media only screen and (max-width: 450px){
+  #container {
+    display: grid; 
+    width: 90vw; 
+    height: 75vh;
+    grid-template-columns: 50vw;
+    grid-template-rows: 75vh;
+    grid-template-areas: "form-holder";
+    background: #fff;
+    justify-content: center;
+    margin: auto;
+  }
+
+  #name {
+    border-radius: $input-radius; 
+    border: $input-brdr; 
+    background: $input-bckgrnd; 
+  }
+
+  #url {
+    border-radius: $input-radius; 
+    border: $input-brdr; 
+    background: $input-bckgrnd;  
+  }
+
+  #check-btn {
+    border-radius: $input-radius; 
+  }
+}
+
