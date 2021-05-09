@@ -14,10 +14,23 @@ export const handleSubmit = (e) => {   //notice the "export" in front of functio
   
   inputErr.innerHTML = ""; //clears out any previous innerhtml 
 
-  if ((name) && (userURL)) {
+  if ((name) && (URLcheck)) {
+    getSentiment(userURL);
   } else {
     inputErr.innerHTML = "Please enter your name and a valid URL"
   }
+}
+
+const getSentiment = async (userURL) => { //posting the userurl so that the server can get the data. 
+  let fetchSentiment = await fetch ("http://localhost:8080/getData", { //since the server is in 8080 and the dev is on 3000, need to include the entire url instead of just the /getData route
+  method: "POST",
+  credentials: "same-origin",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({userURL}) //Notice this was sent as an object
+  });
+  console.log(fetchSentiment); 
 }
 
 

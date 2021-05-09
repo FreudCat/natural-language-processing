@@ -149,6 +149,11 @@ test("what the fxn does", () => {//actual test})
 - add const cors = require("cors"); to top of server.js
 - add app.use(cors()); to server.js
 
+## Need to have node-fetch if using fetch on server
+- npm install node-fetch
+- const fetch = require('node-fetch'); at top of server.js
+- now you can use async await in the node server
+
 ### To get the project running 
 - npm start 
 - npm run build-prod

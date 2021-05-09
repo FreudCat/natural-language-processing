@@ -1,22 +1,31 @@
 const path = require('path')
 const express = require("express"); 
+const bodyParser = require("body-parser"); //middleware to handle POST req. Extracts body portion of incoming req and allows it to be read on req.body. Deprecated - see below 
+const cors = require("cors");
+const fetch = require("node-fetch");
+const dotenv = require('dotenv');
+
 const app = express(); 
 const port = 8080; 
-const dotenv = require('dotenv');
-const cors = require("cors");
 
 dotenv.config();
 app.use(cors());
+//bodyparser is deprecated - use the following instead
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());  //Since body-parser is deprecated, this line is used instead 
+//app.use(bodyparser.json()); <-- Example of how I would have incorporated bodyparser middleware
+app.use(express.static("dist"));
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`); 
 }); 
-
-app.use(express.static("dist"));
 
 app.get("/", function (req, res) {
   res.sendFile(path.resolve('src/client/views/index.html'))
 }); 
 
-app.get("/getKey", function(req, res) {
-  res.send(process.env.API_KEY)
-});
+app.post("/getData", async (req, res) => {
+  console.log("req.body");
+  let url = req.body; 
+  let sentimentData = await fetch (`https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${url}&lang=en`);
+})
