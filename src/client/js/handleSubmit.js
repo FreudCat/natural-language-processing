@@ -1,4 +1,5 @@
 import {urlValidate} from "../js/validate"; 
+import {showData} from "../js/updateUI";
 
 export const handleSubmit = (e) => {   //notice the "export" in front of function declaration -> it will be exported so that it can be imported by another js file, in this case index.js in the src folder. 
   e.preventDefault();
@@ -16,9 +17,7 @@ export const handleSubmit = (e) => {   //notice the "export" in front of functio
 
   if ((name) && (userURL)) {
     getSentiment(userURL)
-      .then(function (data) {
-        console.log(data)
-      })
+      .then(data => showData(data))  //this .then uses the data collected from the original getsentiment post request. Sends this data to the showdata fxn that will post in the browser
   } else {
     inputErr.innerHTML = "Please enter your name and a valid URL"
   }
@@ -34,6 +33,6 @@ const getSentiment = async (userURL) => { //posting the userurl so that the serv
   },
   body: JSON.stringify({userURL}) //Notice this was sent as an object
   });
-  let data = await fetchSentiment.json();
-  console.log(data.agreement);
+  let data = await fetchSentiment.json(); //fetchsentiment now contains the returned sentiment data from the res.send(data) on the post from server.js
+  return data; //returns this data in json form to the original getsentiment function call to be passed down to the .then 
 }
