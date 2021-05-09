@@ -3,13 +3,17 @@ const webpack = require("webpack")
 const htmlWebpackPlugin = require("html-webpack-plugin")
 const styleLoader = require("style-loader")
 const sassLoader = require("sass-loader")
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: "production", //informs which mode we are in 
   entry: './src/client/index.js',  //custom entry point webpack 
   output: {
-    clean: true
-  },
+    path: path.join(__dirname, 'dist'),
+    filename: 'main.js',
+    libraryTarget: 'var',
+    library: 'Client'
+},
   module: {
     rules: [
       {
@@ -47,5 +51,11 @@ module.exports = {
         template: "./src/client/views/index.html",
         filename: "./index.html"
       }), 
+      new CleanWebpackPlugin({
+        dry: false,
+        verbose: true,
+        cleanStaleWebpackAssets: true,
+        protectWebpackAssets: false
+    })
   ]
 }

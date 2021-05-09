@@ -16,7 +16,3 @@ app.use(express.static("dist"));
 app.get("/", function (req, res) {
   res.sendFile(path.resolve('src/client/views/index.html'))
 }); 
-
-app.get("/getKey", function(req, res) {
-  res.send(process.env.API_KEY)
-});
