@@ -4,7 +4,10 @@ const htmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
   mode: 'development',
-  devtool: 'source-map', //informs which mode we are in 
+  devtool: 'source-map', 
+  devServer: {
+    port: 3000
+  },
   entry: './src/client/index.js',  //custom entry point webpack 
   output: {
     clean: true

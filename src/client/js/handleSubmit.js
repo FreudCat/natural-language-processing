@@ -12,14 +12,12 @@ export const handleSubmit = (e) => {   //notice the "export" in front of functio
 
   let URLcheck = urlValidate(userURL);  //calls function to validate URL
   
-  inputErr.innerHTML = ""; 
-
-  
+  inputErr.innerHTML = ""; //clears out any previous innerhtml 
 
   if ((name) && (userURL)) {
-    
   } else {
     inputErr.innerHTML = "Please enter your name and a valid URL"
   }
 }
+
 

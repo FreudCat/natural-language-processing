@@ -36,7 +36,11 @@ module.exports = {
                     }
             ]
     }   underneath "entry" 
-
+- in the dev folder, include: devServer: {
+    port: 3000
+  },    port need to be diff than the 8080 local host one 
+- in the server, make sure the port number is 8080
+- See code on how to do a fetch request when there are two diff servers
 - each time you add something, delete the dist folder and use npm run build to recreate the new dist folder with your new assets, etc 
 - install html webpack plugin: npm i -D html-webpack-plugin
 - require plugin at top of webpack config: const htmlWebpackPlugin = require("html-webpack-plugin")
@@ -140,6 +144,10 @@ describe("name of fxn", () => {});
 test("what the fxn does", () => {//actual test}) 
 
 
+## Incorporate CORS
+- npm install cors
+- add const cors = require("cors"); to top of server.js
+- add app.use(cors()); to server.js
 
 ### To get the project running 
 - npm start 
