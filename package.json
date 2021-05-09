@@ -8,7 +8,8 @@
     "start": "node src/server/server.js",
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack serve  --config webpack.dev.js --open",
-    "test": "jest"
+    "test": "jest",
+    "dev": "nodemon ./src/server/server.js"
   },
   "repository": {
     "type": "git",

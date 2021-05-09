@@ -57,6 +57,8 @@ plugins: [
 - go to server -> index.js and add: app.get("/", function (req, res) {
   res.sendFile(path.resolve('src/client/views/index.html'))
 }); and then add const path = require('path') to the top
+- in server, add app.use(express.urlencoded({ extended: true }));
+app.use(express.json());  --> this takes the place of bodyparser middleware
 - add mode: "production", to webpack.config in the modules.export
 - change webpack.conf file to webpack.prod.js (the one with the mode:production)
 - add webpack.dev.js in the root folder and copy everything from the .prod.js folder into this file
@@ -108,10 +110,25 @@ module: {
 
 ## Clean Webpack 
 _To clean up build folders upon rebuild_
-- in config files, under entry, type: output: {
-    clean: true
-  },
-- will no longer need clean webpack plugin if we have that
+- npm i -D clean-webpack-plugin
+- const { CleanWebpackPlugin } = require('clean-webpack-plugin'); at top of prod.js
+- Under plugins in the prod.js, add: 
+        new CleanWebpackPlugin({
+                // Simulate the removal of files
+                dry: true,
+                // Write Logs to Console
+                verbose: true,
+                // Automatically remove all unused webpack assets on rebuild
+                cleanStaleWebpackAssets: true,
+                protectWebpackAssets: false
+        })
+- then under "entry" in modules.export in prod.js, add: output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'main.js',
+    libraryTarget: 'var',
+    library: 'Client'
+},
+- every time npm run build-prod is run, should see a line stating that the dist/index.html etc was removed
 
 ## Bundle images to webpack 
 - make sure html-webpack-plugin is npm installed 
@@ -149,9 +166,13 @@ test("what the fxn does", () => {//actual test})
 - add const cors = require("cors"); to top of server.js
 - add app.use(cors()); to server.js
 
+## Need to have node-fetch if using fetch on server
+- npm install node-fetch
+- const fetch = require('node-fetch'); at top of server.js
+- now you can use async await in the node server
+
 ### To get the project running 
 - npm start 
 - npm run build-prod
 - npm run build-dev 
 - node-sass -o css src/client/styles -w
-
