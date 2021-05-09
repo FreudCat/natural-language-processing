@@ -31,6 +31,13 @@ app.get("/", function (req, res) {
 
 app.post("/getData", async (req, res) => {
   console.log(req.body);
-  let url = req.body; 
+  let url = req.body.userURL; 
   let sentimentData = await fetch (`https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${url}&lang=en`);
+  let data = await sentimentData.json();
+  console.log(data);
+  console.log(data.agreement);
 })
+
+//polarity: (positive/'negative')
+//subjectivity: ('subjective', factual)
+//text: a text snippet from the article
