@@ -15,7 +15,10 @@ export const handleSubmit = (e) => {   //notice the "export" in front of functio
   inputErr.innerHTML = ""; //clears out any previous innerhtml 
 
   if ((name) && (userURL)) {
-    getSentiment(userURL);
+    getSentiment(userURL)
+      .then(function (data) {
+        console.log(data)
+      })
   } else {
     inputErr.innerHTML = "Please enter your name and a valid URL"
   }
@@ -31,5 +34,6 @@ const getSentiment = async (userURL) => { //posting the userurl so that the serv
   },
   body: JSON.stringify({userURL}) //Notice this was sent as an object
   });
-  console.log(fetchSentiment); 
+  let data = await fetchSentiment.json();
+  console.log(data.agreement);
 }

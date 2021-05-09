@@ -36,6 +36,7 @@ app.post("/getData", async (req, res) => {
   let data = await sentimentData.json();
   console.log(data);
   console.log(data.agreement);
+  res.send(data);
 })
 
 //polarity: (positive/'negative')
