@@ -9,10 +9,14 @@ export const handleSubmit = (e) => {   //notice the "export" in front of functio
   console.log(`${name} ${userURL}`);
   inputErr.innerHTML = "";
 
-  if ((name) && (userURL)) {
+  if (userURL )
+
+  if ((name) && (userURL) || (!userURL)) {
     return true;
-  } else {
-    inputErr.innerHTML = "Please input a name and url";
+  } else if ((!name) && (userURL)){
+    inputErr.innerHTML = "Please enter your name";
+  } else if ((name) && (!userURL)) {
+    inputErr.innerHTML = "Please enter a valid "
   }
 }
 
