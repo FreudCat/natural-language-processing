@@ -4,4 +4,4 @@ import {urlValidate} from "./js/validate";
 
 const btn = document.getElementById("check-btn"); 
 
-btn.addEventListener("click", urlValidate); 
+btn.addEventListener("click", handleSubmit); 
