@@ -1,5 +1,5 @@
 const regex = /^((?:https?:\/\/)?[^./]+(?:\.[^./]+)+(?:\/.*)?)$/;
-// all regex needs to be within forward slash. Ex: /regexPattern/
+let userURL = document.getElementById("url");// all regex needs to be within forward slash. Ex: /regexPattern/
 //^ matches beginning of input
 //(?:https?:\/\/)? --> ?: indicates the following (in this case https)is a non-captured group, it is recognized but ignores it in final result
 // note that \ is an escape character -> ?:\/\/ -> non-captured group is // 
@@ -8,7 +8,12 @@ const regex = /^((?:https?:\/\/)?[^./]+(?:\.[^./]+)+(?:\/.*)?)$/;
 // [^./] the ^ is a exception assertion -> the next character can be anything except . or / 
 // $ matches the end of input
 
-export const urlValidate = (e) => {
-  e.preventDefault();
-  console.log(regex.test('www.com/heart')); 
+export const urlValidate = (userURL) => {
+  //let userURL = document.getElementById("url").value;
+  console.log(userURL);
+  if (regex.test(userURL)) {
+    return true; 
+  } else {
+    return false; 
+  }
 }
