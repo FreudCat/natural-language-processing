@@ -12,11 +12,14 @@ export const showData = (data) => {
   console.log(sentimentObj);
 
   for (let item in sentimentObj) {
-    console.log(item);
-    let newP = document.createElement("p");
-    newP.id = item; 
-    newP.innerHTML = sentimentObj[item];
-    console.log(newP);  
-    resultsHolder.appendChild(newP);
+    let newP = document.createElement("p"); //create a <p></p> tag
+    newP.id = item; //generate unique ids for each p tag
+    newP.classList.add("result-text");
+    let feeling = sentimentObj[item].toLowerCase(); //change the word to all lowercase
+    item = item[0].toUpperCase() + item.slice(1); //capitalize the first letter 
+    newP.innerHTML = `${item}: ${feeling}`; 
+    console.log(newP);
+    
+    resultsHolder.appendChild(newP); //Appending into the DOM 
   }
 }
