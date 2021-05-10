@@ -1,5 +1,6 @@
 import {urlValidate} from "../js/validate"; 
 import {showData} from "../js/updateUI";
+import 'regenerator-runtime/runtime'; //allow jest and babel to test async functions
 
 export const handleSubmit = (e) => {   //notice the "export" in front of function declaration -> it will be exported so that it can be imported by another js file, in this case index.js in the src folder. 
   e.preventDefault();
