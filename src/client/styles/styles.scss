@@ -7,7 +7,7 @@ body {
   height: 100vh; 
 }
 
-@media only screen and (max-width: 450px){
+@media only screen and (min-width: 325px) and (max-width: 390px) {
   #container {
     display: grid; 
     width: 90vw; 
@@ -31,7 +31,88 @@ body {
 
   #img-result-holder {
     grid-area: img;
-    border: 1px red solid;
+  }
+
+  #img-reading {
+    width: 60%;
+    position: relative;
+    top: 50vh;
+    left: 2vw;
+    z-index: 1;
+  }
+
+  #img-lotus {
+    width: 40%;
+    position: relative;
+    top: -15vh;
+    left: 25vw;
+    z-index: 3;
+  }
+
+  #img-newspaper {
+    width: 90%;
+    position: relative;
+    top: -20vh;
+    left: 15vw;
+    z-index: 2;
+  }
+
+  #gold-frame {
+    position: relative;
+    border: 3px solid gold;
+    height: 40vh;
+    width: 30vw;
+    top: -70vh;
+    left: 7vw;
+    z-index: 0;
+  }
+
+  #form {
+    grid-area: form;
+  }
+
+  #name {
+    border-radius: $input-radius; 
+    border: $input-brdr; 
+    background: $input-bckgrnd; 
+  }
+
+  #url {
+    border-radius: $input-radius; 
+    border: $input-brdr; 
+    background: $input-bckgrnd;  
+  }
+
+  #check-btn {
+    border-radius: $input-radius;
+    border: $input-brdr;
+  }
+}
+
+@media only screen and (min-width: 391px) and (max-width: 450px) {
+  #container {
+    display: grid; 
+    width: 90vw; 
+    height: 75vh;
+    grid-template-columns: 90%;
+    grid-template-rows: 75vh;
+    grid-template-areas: "form-holder";
+    background: #fff;
+    justify-content: center;
+    margin: auto;
+  }
+
+  #main-holder {
+    grid-area: form-holder;
+    display: grid;
+    grid-template-columns: repeat(2, 45vw); 
+    grid-template-rows: auto;
+    grid-template-areas: "img form"; 
+    justify-content: center;
+  }
+
+  #img-result-holder {
+    grid-area: img;
   }
 
   #img-reading {
