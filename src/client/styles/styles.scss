@@ -7,7 +7,7 @@ body {
   height: 100vh; 
 }
 
-@media only screen and (min-width: 325px) and (max-width: 390px) {
+@media only screen and (max-width: 390px) {
   #container {
     display: grid; 
     width: 90vw; 
@@ -36,7 +36,7 @@ body {
   #img-reading {
     width: 60%;
     position: relative;
-    top: 50vh;
+    top: 10vh;
     left: 2vw;
     z-index: 1;
   }
@@ -44,7 +44,7 @@ body {
   #img-lotus {
     width: 40%;
     position: relative;
-    top: -15vh;
+    top: -5vh;
     left: 25vw;
     z-index: 3;
   }
@@ -52,7 +52,7 @@ body {
   #img-newspaper {
     width: 90%;
     position: relative;
-    top: -20vh;
+    top: -10vh;
     left: 15vw;
     z-index: 2;
   }
@@ -60,9 +60,9 @@ body {
   #gold-frame {
     position: relative;
     border: 3px solid gold;
-    height: 40vh;
+    height: 35vh;
     width: 30vw;
-    top: -70vh;
+    top: -55vh;
     left: 7vw;
     z-index: 0;
   }
