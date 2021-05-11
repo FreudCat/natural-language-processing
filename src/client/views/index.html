@@ -9,13 +9,12 @@
 
 <body>
   <div id="container">
-    <div id="result-holder"></div>
     <div id="main-holder">
+      <header id="hdr">
+        <h2>Sentiment Analysis</h2>
+      </header>
       <section id="img-result-holder">
-        <img id="img-reading" src="/src/client/styles/multimedia/reading.jpg" alt="young woman reading dictionary">
-        <img id="img-lotus" src="/src/client/styles/multimedia/lotus.png" alt="pink lotus flower">
-        <img id="img-newspaper" src="/src/client/styles/multimedia/newspaper.jpg" alt="newspaper and coffee">
-        <div id="gold-frame"></div>
+        <img id="img-reading" src="/src/client/styles/multimedia/Table.jpg" alt="young woman reading dictionary">
       </section>
 
       <form id="form">
@@ -23,12 +22,14 @@
           <p id="err-holder"></p>
           <label for="name">Name</label>
           <input type="text" id="name">
-          <label for="url">Enter a URL to check language</label>
+          <label for="url">Enter a URL</label>
           <input type="url" name="url" id="url" placeholder="https://url.com">
         </div>
         <button id="check-btn" type="submit">Check Language</button>
       </form>
-      
+      <footer id="ftr">
+        <p id="footer-text">FreudCat 2021</p>
+      </footer>
 
       <div id="result-holder"></div>
     

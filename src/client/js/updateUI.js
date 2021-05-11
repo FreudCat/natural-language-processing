@@ -1,7 +1,5 @@
-export const showData = (data) => {
+export const showData = (data, resultsHolder) => {
   console.log(data);
-
-  const resultsHolder = document.getElementById("result-holder");
 
   let sentimentObj = {
     agreement: data.agreement,
@@ -19,7 +17,6 @@ export const showData = (data) => {
     item = item[0].toUpperCase() + item.slice(1); //capitalize the first letter 
     newP.innerHTML = `${item}: ${feeling}`; 
     console.log(newP);
-    
     resultsHolder.appendChild(newP); //Appending into the DOM 
   }
 }
