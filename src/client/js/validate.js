@@ -8,7 +8,6 @@ const regex = /^((?:https?:\/\/)?[^./]+(?:\.[^./]+)+(?:\/.*)?)$/;
 // $ matches the end of input
 
 export const urlValidate = (userURL) => {
-  console.log(`validate ${userURL}`);
   if (regex.test(userURL)) {
     console.log("URL was valid");
     return true; 
