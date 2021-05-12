@@ -12,6 +12,11 @@ body {
 .center-text {
   text-align: center; }
 
+.status-code-msg {
+  padding-top: 5vh;
+  text-align: center;
+  width: 50vw; }
+
 @media only screen and (min-width: 350px) and (max-width: 450px) {
   #container {
     display: grid;
@@ -61,7 +66,11 @@ body {
     opacity: 1;
     transition: 2s;
     color: white;
-    box-shadow: 5px 5px 20px #505050; } }
+    box-shadow: 5px 5px 20px #505050; }
+  .status-code-msg {
+    padding-top: 5vh;
+    text-align: center;
+    width: 50vw; } }
 
 @media only screen and (min-width: 451px) and (max-width: 750px) {
   #container {
@@ -165,4 +174,8 @@ body {
     opacity: 1;
     transition: 2s;
     color: white;
-    box-shadow: 5px 5px 20px #505050; } }
+    box-shadow: 5px 5px 20px #505050; }
+  .status-code-msg {
+    padding-top: 5vh;
+    text-align: center;
+    width: 40vw; } }
