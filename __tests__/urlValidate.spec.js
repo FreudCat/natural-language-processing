@@ -14,6 +14,6 @@ describe("Check urlValidate function", () => {
     expect(urlValidate("www.abc.com/xyz")).toBeTruthy();  //expect this one to pass
   }); 
   test("Test regex for non url-type input", () => {
-    expect(urlValidate("xyz")).toBeTruthy(); //expect this one to fail
+    expect(urlValidate("xyz")).toBe(false); //expect this one pass
   }); 
 });

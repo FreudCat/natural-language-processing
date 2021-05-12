@@ -74,6 +74,7 @@ app.use(express.json());  --> this takes the place of bodyparser middleware
 
 ## Sass 
 - npm install -g node-sass 
+- in package.json, add: "sass": "node-sass -w src/ -o src/ --recursive",   to the scripts (change the src/ and src/ to the folder where you have the scss and want the css, respectively.) The -w means it will watch and auto-compile
 - type node-sass -o css src/client/styles -w  (-o output to css, the folder containing the scss files, and -w means to continuously watch for changes); now the cmd line is watching for changes
 - to use sass with webpack: npm install sass-loader sass webpack --save-dev
 - add this to .build-dev and build-prod 
@@ -175,4 +176,4 @@ test("what the fxn does", () => {//actual test})
 - npm start 
 - npm run build-prod
 - npm run build-dev 
-- node-sass -o css src/client/styles -w
+- npm run sass

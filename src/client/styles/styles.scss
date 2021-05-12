@@ -1,93 +1,246 @@
-$input-bckgrnd: lightgrey;
-$input-radius: 10px; 
-$input-brdr: none; 
+$form-bckgrnd: rgb(241, 240, 240);
+$err-text: rgb(12, 182, 102);
+$btn: rgb(18, 223, 127);
 
-body {
-  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 44)); 
-  height: 100vh; 
+h2,
+p, 
+input, 
+label {
+  font-family: Arial, Helvetica, sans-serif ;
 }
 
-@media only screen and (max-width: 450px){
+body {
+  background: linear-gradient(rgb(18, 223, 127), rgb(2, 97, 53));
+  height: 100vh;
+  overflow: hidden;
+}
+
+.center-text {
+  text-align: center;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 450px) {
   #container {
     display: grid; 
-    width: 90vw; 
-    height: 75vh;
-    grid-template-columns: 90%;
-    grid-template-rows: 75vh;
-    grid-template-areas: "form-holder";
-    background: #fff;
+    grid-template-columns: 60vw;
+    grid-template-rows: 15vh 70vh 10vh;
+    grid-template-areas:
+    "hdr"
+    "form"
+    "ftr";
     justify-content: center;
-    margin: auto;
+  }
+
+  #hdr {
+    grid-area: hdr;
   }
 
   #main-holder {
-    grid-area: form-holder;
-    display: grid;
-    grid-template-columns: repeat(2, 45vw); 
-    grid-template-rows: auto;
-    grid-template-areas: "img form"; 
-    justify-content: center;
-  }
-
-  #img-result-holder {
-    grid-area: img;
-    border: 1px red solid;
-  }
-
-  #img-reading {
-    width: 60%;
-    position: relative;
-    top: 5vh;
-    left: 2vw;
-    z-index: 1;
-  }
-
-  #img-lotus {
-    width: 40%;
-    position: relative;
-    top: -15vh;
-    left: 25vw;
-    z-index: 3;
-  }
-
-  #img-newspaper {
-    width: 90%;
-    position: relative;
-    top: -20vh;
-    left: 15vw;
-    z-index: 2;
-  }
-
-  #gold-frame {
-    position: relative;
-    border: 3px solid gold;
-    height: 40vh;
-    width: 30vw;
-    top: -70vh;
-    left: 7vw;
-    z-index: 0;
-  }
-
-  #form {
     grid-area: form;
-    border: 1px solid blue;
+    display: grid;
+    justify-content: center;
+    background: $form-bckgrnd;
+    box-shadow: 8px 8px 30px rgb(87, 87, 87);
   }
 
-  #name {
-    border-radius: $input-radius; 
-    border: $input-brdr; 
-    background: $input-bckgrnd; 
+  #err-holder {
+    text-align: center;
+    width: 50vw;
+    color: $err-text;
   }
 
-  #url {
-    border-radius: $input-radius; 
-    border: $input-brdr; 
-    background: $input-bckgrnd;  
+  input {
+    display: block;
+    width: 50vw;
+    margin-bottom: 2vh;
+    border: 1px solid lightgrey;
+    height: 4vh;
   }
 
   #check-btn {
-    border-radius: $input-radius;
-    border: $input-brdr;
+    width: 51vw;
+    background: $btn;
+    border: none;
+    color: #fff;
+    height: 5vh;
+
+    &:active {
+      background: #fff;
+      color: $btn;
+      border: 2px $btn solid ;
+    }
+
+    &:hover {
+      box-shadow: 5px 5px 5px rgb(219, 219, 219);
+    }
+  }
+
+  #ftr {
+    grid-area: ftr;
+    font-size: 0.8em;
+  }
+
+  .result-holder-style {
+    background: rgb(3, 136, 74);
+    font-family: sans-serif;
+    font-size: 0.8em;
+    padding-left: 5px;
+    height: 25vh;
+    opacity: 1;
+    transition: 2s;
+    color: white;
+    box-shadow: 5px 5px 20px rgb(80, 80, 80);
+  }
+}
+
+
+@media only screen and (min-width: 451px) and (max-width: 750px) {
+  #container {
+    display: grid; 
+    grid-template-columns: 60vw;
+    grid-template-rows: 15vh 70vh 10vh;
+    grid-template-areas:
+    "hdr"
+    "form"
+    "ftr";
+    justify-content: center;
+  }
+
+  #hdr {
+    grid-area: hdr;
+    background: 1px black solid;
+  }
+
+  #main-holder {
+    grid-area: form;
+    display: grid;
+    justify-content: center;
+    background: $form-bckgrnd;
+    box-shadow: 8px 8px 30px rgb(87, 87, 87);
+  }
+
+  #err-holder {
+    text-align: center;
+    width: 50vw;
+    color: $err-text;
+  }
+  input {
+    display: block;
+    width: 50vw;
+    margin-bottom: 2vh;
+    border: 1px solid lightgrey;
+    height: 4vh;
+  }
+
+  #check-btn {
+    width: 51vw;
+    background: $btn;
+    border: none;
+    color: #fff;
+    height: 5vh;
+
+    &:active {
+      background: #fff;
+      color: $btn;
+      border: 2px $btn solid ;
+    }
+
+    &:hover {
+      box-shadow: 5px 5px 5px rgb(219, 219, 219);
+    }
+  }
+
+  #ftr {
+    grid-area: ftr;
+    font-size: 0.5em;
+  }
+
+  .result-holder-style {
+    background: rgb(3, 136, 74);
+    font-family: sans-serif;
+    font-size: 0.8em;
+    padding-left: 5px;
+    height: 25vh;
+    opacity: 1;
+    transition: 2s;
+    color: white;
+    box-shadow: 5px 5px 20px rgb(80, 80, 80);
+  }
+}
+
+
+@media only screen and (min-width: 751px) {
+  #container {
+    display: grid; 
+    grid-template-columns: 45vw;
+    grid-template-rows: 15vh 75vh 10vh;
+    grid-template-areas:
+    "hdr"
+    "form"
+    "ftr";
+    justify-content: center;
+  }
+
+  #hdr {
+    grid-area: hdr;
+  }
+
+  #main-holder {
+    grid-area: form;
+    display: grid;
+    justify-content: center;
+    background: $form-bckgrnd;
+    box-shadow: 8px 8px 30px rgb(87, 87, 87);
+    padding-top: 5vh;
+  }
+
+  #err-holder {
+    text-align: center;
+    width: 40vw;
+    color: $err-text;
+  }
+
+  input {
+    display: block;
+    width: 40vw;
+    margin-bottom: 5vh;
+    border: 1px solid lightgrey;
+    height: 4vh;
+  }
+
+  #check-btn {
+    width: 41vw;
+    background: $btn;
+    border: none;
+    color: #fff;
+    height: 5vh;
+
+    &:active {
+      background: #fff;
+      color: $btn;
+      border: 2px $btn solid ;
+    }
+
+    &:hover {
+      box-shadow: 5px 5px 5px rgb(219, 219, 219);
+    }
+  }
+
+  #ftr {
+    grid-area: ftr;
+    font-size: 0.8em;
+  }
+
+  .result-holder-style {
+    background: rgb(3, 136, 74);
+    font-family: sans-serif;
+    font-size: 0.8em;
+    padding-left: 5px;
+    height: 25vh;
+    opacity: 1;
+    transition: 2s;
+    color: white;
+    box-shadow: 5px 5px 20px rgb(80, 80, 80);
   }
 }
 
