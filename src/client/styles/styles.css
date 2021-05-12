@@ -1,8 +1,7 @@
 body {
   background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(#00002c));
   background-image: linear-gradient(black, #00002c);
-  height: 100vh;
-}
+  height: 100vh; }
 
 @media only screen and (max-width: 450px) {
   #container {
@@ -11,58 +10,52 @@ body {
     width: 90vw;
     height: 75vh;
     -ms-grid-columns: 90%;
-        grid-template-columns: 90%;
+    grid-template-columns: 90%;
     -ms-grid-rows: 75vh;
-        grid-template-rows: 75vh;
-        grid-template-areas: "form-holder";
+    grid-template-rows: 75vh;
+    grid-template-areas: "form-holder";
     background: #fff;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin: auto;
-  }
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: auto; }
   #main-holder {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: form-holder;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (45vw)[2];
-        grid-template-columns: repeat(2, 45vw);
+    -ms-grid-columns: 45vw [2];
+    grid-template-columns: repeat(2, 45vw);
     -ms-grid-rows: auto;
-        grid-template-rows: auto;
-        grid-template-areas: "img form";
+    grid-template-rows: auto;
+    grid-template-areas: "img form";
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
+    -ms-flex-pack: center;
+    justify-content: center; }
   #img-result-holder {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: img;
-    border: 1px red solid;
-  }
+    border: 1px red solid; }
   #img-reading {
     width: 60%;
     position: relative;
     top: 5vh;
     left: 2vw;
-    z-index: 1;
-  }
+    z-index: 1; }
   #img-lotus {
     width: 40%;
     position: relative;
     top: -15vh;
     left: 25vw;
-    z-index: 3;
-  }
+    z-index: 3; }
   #img-newspaper {
     width: 90%;
     position: relative;
     top: -20vh;
     left: 15vw;
-    z-index: 2;
-  }
+    z-index: 2; }
   #gold-frame {
     position: relative;
     border: 3px solid gold;
@@ -70,27 +63,22 @@ body {
     width: 30vw;
     top: -70vh;
     left: 7vw;
-    z-index: 0;
-  }
+    z-index: 0; }
   #form {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: form;
-    border: 1px solid blue;
-  }
+    border: 1px solid blue; }
   #name {
     border-radius: 10px;
     border: none;
-    background: lightgrey;
-  }
+    background: lightgrey; }
   #url {
     border-radius: 10px;
     border: none;
-    background: lightgrey;
-  }
+    background: lightgrey; }
   #check-btn {
     border-radius: 10px;
-    border: none;
-  }
-}
+    border: none; } }
+
 /*# sourceMappingURL=styles.css.map */
