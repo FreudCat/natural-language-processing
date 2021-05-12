@@ -43,12 +43,12 @@ body {
     border: none;
     color: #fff;
     height: 5vh; }
-  #check-btn:active {
-    background: #fff;
-    color: #12df7f;
-    border: 2px #12df7f solid; }
-  #check-btn:hover {
-    box-shadow: 5px 5px 5px #dbdbdb; }
+    #check-btn:active {
+      background: #fff;
+      color: #12df7f;
+      border: 2px #12df7f solid; }
+    #check-btn:hover {
+      box-shadow: 5px 5px 5px #dbdbdb; }
   #ftr {
     grid-area: ftr;
     font-size: 0.8em; }
@@ -95,12 +95,12 @@ body {
     border: none;
     color: #fff;
     height: 5vh; }
-  #check-btn:active {
-    background: #fff;
-    color: #12df7f;
-    border: 2px #12df7f solid; }
-  #check-btn:hover {
-    box-shadow: 5px 5px 5px #dbdbdb; }
+    #check-btn:active {
+      background: #fff;
+      color: #12df7f;
+      border: 2px #12df7f solid; }
+    #check-btn:hover {
+      box-shadow: 5px 5px 5px #dbdbdb; }
   #ftr {
     grid-area: ftr;
     font-size: 0.5em; }
@@ -147,12 +147,12 @@ body {
     border: none;
     color: #fff;
     height: 5vh; }
-  #check-btn:active {
-    background: #fff;
-    color: #12df7f;
-    border: 2px #12df7f solid; }
-  #check-btn:hover {
-    box-shadow: 5px 5px 5px #dbdbdb; }
+    #check-btn:active {
+      background: #fff;
+      color: #12df7f;
+      border: 2px #12df7f solid; }
+    #check-btn:hover {
+      box-shadow: 5px 5px 5px #dbdbdb; }
   #ftr {
     grid-area: ftr;
     font-size: 0.8em; }
