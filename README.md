@@ -7,9 +7,9 @@ This project utilizes **JavaScript**, **HTML**, **Sass** to analyze the intent o
 - git clone https://github.com/FreudCat/natural-language.processing.git
 
 ## Instructions to start app 
-```npm run prod```
-```npm start```
-```npm run dev```
+- ```npm run prod```
+- ```npm start```
+- ```npm run dev```
 
 ## Jest testing 
 - run script ```npm jest```
