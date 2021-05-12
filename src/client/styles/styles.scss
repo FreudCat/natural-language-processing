@@ -1,6 +1,7 @@
 $form-bckgrnd: rgb(241, 240, 240);
 $err-text: rgb(12, 182, 102);
 $btn: rgb(18, 223, 127);
+$box-shadow: 8px 8px 30px rgb(87, 87, 87);
 
 h2,
 p, 
@@ -40,7 +41,7 @@ body {
     display: grid;
     justify-content: center;
     background: $form-bckgrnd;
-    box-shadow: 8px 8px 30px rgb(87, 87, 87);
+    box-shadow: $box-shadow;
   }
 
   #err-holder {
@@ -116,7 +117,7 @@ body {
     display: grid;
     justify-content: center;
     background: $form-bckgrnd;
-    box-shadow: 8px 8px 30px rgb(87, 87, 87);
+    box-shadow: $box-shadow;
   }
 
   #err-holder {
@@ -190,7 +191,7 @@ body {
     display: grid;
     justify-content: center;
     background: $form-bckgrnd;
-    box-shadow: 8px 8px 30px rgb(87, 87, 87);
+    box-shadow: $box-shadow;
     padding-top: 5vh;
   }
 
