@@ -1,4 +1,5 @@
 export const showData = (data, resultsHolder) => {
+  console.log(data);
 
   if (data.status.code == 212) { //will fire when key and URL passed to meaningcloud, and meaningcloud returned with status code 212 and determined there was content to analyze.  
     console.log("MeaningCloud status code 212: No content to analyze");
