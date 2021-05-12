@@ -9,31 +9,28 @@
 
 <body>
   <div id="container">
+    <header id="hdr">
+      <h2 class="center-text">Sentiment Analysis</h2>
+    </header>
     <div id="main-holder">
-      <header id="hdr">
-        <h2>Sentiment Analysis</h2>
-      </header>
-      <section id="img-result-holder">
-        <img id="img-reading" src="/src/client/styles/multimedia/Table.jpg" alt="young woman reading dictionary">
-      </section>
 
-      <form id="form">
+      <form id="entry-form">
         <div id="user-input">
           <p id="err-holder"></p>
-          <label for="name">Name</label>
-          <input type="text" id="name">
-          <label for="url">Enter a URL</label>
+          <label class="label-style" for="name">Please enter your name:</label>
+          <input type="text" id="name" placeholder="Name">
+          <label class="label-style" for="url">Please enter a URL:</label>
           <input type="url" name="url" id="url" placeholder="https://url.com">
         </div>
-        <button id="check-btn" type="submit">Check Language</button>
+        <button id="check-btn" type="submit">Check Sentiment</button>
       </form>
-      <footer id="ftr">
-        <p id="footer-text">FreudCat 2021</p>
-      </footer>
 
       <div id="result-holder"></div>
     
     </div> <!--End main-holder div-->
+    <footer id="ftr">
+      <p class="center-text">FreudCat 2021</p>
+    </footer>
   </div> <!--End container div-->
 </body>
 
