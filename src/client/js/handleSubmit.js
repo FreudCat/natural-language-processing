@@ -14,11 +14,11 @@ export const handleSubmit = (e) => {   //notice the "export" in front of functio
   console.log(`${name} ${userURL}`);
 
   let URLcheck = urlValidate(userURL);  //calls function to validate URL
-  
+
   inputErr.innerHTML = ""; //clears out any previous innerhtml
   resultsHolder.innerHTML = ""; //makes sure that the results holder is clear before adding results
 
-  if ((name) && (userURL)) {
+  if ((name) && (URLcheck)) {
     getSentiment(userURL, resultsHolder)
       .then(data => showData(data, resultsHolder))  //this .then uses the data collected from the original getsentiment post request. Sends this data to the showdata fxn that will post in the browser
   } else {
@@ -28,7 +28,8 @@ export const handleSubmit = (e) => {   //notice the "export" in front of functio
 
 
 const getSentiment = async (userURL, resultsHolder) => { //posting the userurl so that the server can get the data. 
-  
+
+
   resultsHolder.classList.add("result-holder-style");
   let fetchSentiment = await fetch ("http://localhost:8080/getData", { //since the server is in 8080 and the dev is on 3000, need to include the entire url instead of just the /getData route
   method: "POST",

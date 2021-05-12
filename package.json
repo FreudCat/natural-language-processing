@@ -6,10 +6,10 @@
   "scripts": {
     "sass": "node-sass -w src/ -o src/ --recursive",
     "start": "node src/server/server.js",
-    "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack serve  --config webpack.dev.js --open",
+    "prod": "webpack --config webpack.prod.js",
+    "dev": "webpack serve  --config webpack.dev.js --open",
     "test": "jest",
-    "dev": "nodemon ./src/server/server.js"
+    "nodemon": "nodemon ./src/server/server.js"
   },
   "repository": {
     "type": "git",
