@@ -4,6 +4,7 @@ const htmlWebpackPlugin = require("html-webpack-plugin")
 const styleLoader = require("style-loader")
 const sassLoader = require("sass-loader")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   mode: "production", //informs which mode we are in 
@@ -56,6 +57,7 @@ module.exports = {
         verbose: true,
         cleanStaleWebpackAssets: true,
         protectWebpackAssets: false
-    })
+    }), 
+    new WorkboxPlugin.GenerateSW()
   ]
 }
