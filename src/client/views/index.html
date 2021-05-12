@@ -36,7 +36,8 @@
   <script>
     if ('serviceWorker' in navigator) { //ensure that "serviceWorker" enabled
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js'); //serviceworker allows offline access
+            navigator.serviceWorker.register('../../../dist/service-worker.js'); //serviceworker allows offline access
+            console.log('Service worker has been registered');
         });
     }
   </script>
