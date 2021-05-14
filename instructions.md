@@ -18,14 +18,9 @@
 `module.exports = {}` 
 - add `entry: "./src/client/index.js"` within the module.exports in the webpack.prod.js
 - type `npm run prod` in command line and see that a dist folder has been created 
-
-
-- add "webpack-dev-server": "^3.11.0" to devdependencies in package.json
-- go to server.js in server folder and type app.use(express.static("dist")); to provide an entry point 
-- go to index.html in views and add the path to the main.js file in the dist folder like you would for any js file (won't need any other ref files since everything will be in the dist folder - we will also get rid this main.js connection in a little bit )
-- install babel in command line npm i -D @babel/core @babel/preset-env babel-loader (See if there's a later verions) 
-- create a file called .babelrc in the root of the project and type { ‘presets’: ['@babel/preset-env'] }   ---> we need babel to import js into other js files on the client side
-- now connect webpack to babel, go to webpack.config.js and add 
+- install babel in command line `npm i -D @babel/core @babel/preset-env babel-loader` (See if there's a later verions) 
+- create a file called .babelrc in the root of the project and type `{ ‘presets’: ['@babel/preset-env'] }` 
+- now connect webpack to babel, go to webpack.prod.js and add 
        module: {
             rules: [
                     {
@@ -37,10 +32,14 @@
     }   underneath "entry" 
 - in the dev folder, include: devServer: {
     port: 3000
-  },    port need to be diff than the 8080 local host one 
-- in the server, make sure the port number is 8080
+  },    port need to be different than the port for the local server
+
+- add "webpack-dev-server": "^3.11.0" to devdependencies in package.json
+- go to server.js in server folder and type app.use(express.static("dist")); to provide an entry point 
+- go to index.html in views and add the path to the main.js file in the dist folder like you would for any js file (won't need any other ref files since everything will be in the dist folder - we will also get rid this main.js connection in a little bit )
+
 - See code on how to do a fetch request when there are two diff servers
-- each time you add something, delete the dist folder and use npm run build to recreate the new dist folder with your new assets, etc 
+- Add clean webpack - see section below
 - install html webpack plugin: npm i -D html-webpack-plugin
 - require plugin at top of webpack config: const htmlWebpackPlugin = require("html-webpack-plugin")
 - add 
@@ -112,7 +111,8 @@ module: {
 _To clean up build folders upon rebuild_
 - npm i -D clean-webpack-plugin
 - const { CleanWebpackPlugin } = require('clean-webpack-plugin'); at top of prod.js
-- Under plugins in the prod.js, add: 
+- For the plugin in prod.js underneath the entire modules section, add : 
+- plugins [  
         new CleanWebpackPlugin({
                 // Simulate the removal of files
                 dry: true,
@@ -122,7 +122,8 @@ _To clean up build folders upon rebuild_
                 cleanStaleWebpackAssets: true,
                 protectWebpackAssets: false
         })
-- then under "entry" in modules.export in prod.js, add: output: {
+  ]
+- then under "entry" in prod.js, add: output: {
     path: path.join(__dirname, 'dist'),
     filename: 'main.js',
     libraryTarget: 'var',
