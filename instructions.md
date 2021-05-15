@@ -187,6 +187,14 @@ test("what the fxn does", () => {//actual test})
 - const fetch = require('node-fetch'); at top of server.js
 - now you can use async await in the node server
 
+## Add nodemon for auto-reload of servers
+- `npm install --save-dev nodemon` in terminal to install nodemon
+- go to package.json and add 
+"scripts": {
+    "nodemon": "nodemon ./src/server/server.js localhost 2000" (note that the path after nodemon depends on where the server is in relation to package.json)
+  },
+- use npm run dev to start the nodemon server
+
 ### To get the project running 
 - npm start 
 - npm run build-prod
