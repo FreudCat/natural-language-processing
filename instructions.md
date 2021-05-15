@@ -170,6 +170,12 @@ describe("name of fxn", () => {});
 - within the {} above, type: 
 test("what the fxn does", () => {//actual test}) 
 
+## Add dotenv
+- `npm install dotenv` to utilize .env files in server.js
+- `require('dotenv').config()` at top of server.js file
+- create `.env` file in root and add `API_KEY: $$$$$$$$`
+- ADD .env file to .gitignore!!!
+- call api_key with : `process.env.API_KEY` in the server.js folder
 
 ## Incorporate CORS
 - npm install cors
