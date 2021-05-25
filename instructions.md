@@ -143,7 +143,7 @@ _To clean up build folders upon rebuild_
 ## Bundle images to webpack 
 - make sure html-webpack-plugin is npm installed 
 - type npm i -D html-loader 
-- in dev.js add: 
+- in prod.js and dev.js add: 
     {
         test: /\.html$/i,
         loader: 'html-loader',
@@ -152,13 +152,30 @@ _To clean up build folders upon rebuild_
 - Add to dev.js and prod.js: 
         {
           test: /\.(png|jpe?g|gif)$/i,
-          use: [
-            {
-              loader: "file-loader",
-            },
-          ],
+          use: {
+            loader: "file-loader",
+            options: {
+              outputPath: "img/",
+              publicPath: "img/",
+              name: "[name][hash].[ext]"
+            }
+          }
         },
-- now you can use ```img src=``` in html
+- for both prod and dev add { test: '/.js$/', 
+        exclude: /node_modules/, 
+        loader: "babel-loader" 
+      }, 
+- Create an image folder somewhere
+### To add image 
+- in the js folder where you will be updating the elements that require the image, type `import myImg from "./image/image.png"`
+- then, do something like `document.getelementbyid.src = myImg`
+- can also render image from css using `variable.style.backgroundImge = ""`
+### To dynamically create an image in your html
+- In the js file that will render the image, type of the following 
+- `let myImg = require.context("../images/icons");` (the info in the () should be where the images are contained)
+- ``let weatherIcon = myImg(`./${dataObj.newWeatherEntry[0].icon}.png`).default;`` (the info inside the () is the dynamic image you are searching for, note the `./` and the `.png` or other extension, too)
+- `let newImg = document.createElement("img");`
+- `newImg.src = weatherIcon;`
 
 ## Installing Jest 
 - npm i -D jest 
