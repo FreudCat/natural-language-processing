@@ -212,6 +212,11 @@ test("what the fxn does", () => {//actual test})
   },
 - use npm run dev to start the nodemon server
 
+## Add Service Workers 
+- `npm install workbox-webpack-plugin --save-dev`
+- `const WorkboxPlugin = require('workbox-webpack-plugin');` at the top of the file dev and prod js files 
+- Instantiate the new plugin in the plugin list: `new WorkboxPlugin.GenerateSW()`
+
 ### To get the project running 
 - npm start 
 - npm run build-prod
