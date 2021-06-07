@@ -217,6 +217,35 @@ test("what the fxn does", () => {//actual test})
 - `const WorkboxPlugin = require('workbox-webpack-plugin');` at the top of the file dev and prod js files 
 - Instantiate the new plugin in the plugin list: `new WorkboxPlugin.GenerateSW()`
 
+## Add Supertest for express testing 
+- `npm install supertest --save-dev`
+- make sure that you see supertest in the devdependencies in package.json
+- create a new file in server folder titled "serverTest.js" or something similar 
+- in serverTest.js, create an app (don't use app.listen since we don't need it to listen):  
+<pre>
+const express = require("express");
+const app = express(); 
+
+app.get("/", function (req, res) {
+  res.status(200).send("Test has passed!");
+});
+module.exports = app;
+</pre>
+- in the jest testing folder, create a test file such as serverTest.spec.js
+- then create your test: 
+<pre>
+const request = require("supertest"); 
+const app = require( "../src/server/serverTest.js");
+import 'regenerator-runtime/runtime'; //needed for running async/await in testing
+
+describe("Test the root path", () => {
+  test("It should response the GET method", async () => {
+    const response = await request(app).get("/");
+    expect(response.statusCode).toBe(200);
+  });
+});
+</pre>
+
 ### To get the project running 
 - npm start 
 - npm run build-prod
